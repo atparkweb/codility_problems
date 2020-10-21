@@ -7,16 +7,12 @@
  * */
 
 function solution(A) {
-    const minimumSegLength = 3;
-    
-    var segLen = 1;
-
-    function solution_recurs(arr, longest) {
-        if (arr.length < minimumSegLength) return longest;
+    function solution_recurs(arr, longest, segLen) {
+        if (arr.length < 3) return longest;
         
         if (arr[0] === arr[2]) {
-            if (segLen < 3) segLen = minimumSegLength;
-            if (arr[1] === arr[3]) {
+            if (segLen < 3) segLen = 3;
+            if (arr.length > 3 && arr[1] === arr[3]) {
                 segLen += 1;
             }
 
@@ -25,10 +21,10 @@ function solution(A) {
             segLen = 1;
         }
 
-        return solution_recurs(arr.slice(1), longest);
+        return solution_recurs(arr.slice(1), longest, segLen);
     }
 
 
 
-    return solution_recurs(A, 1);
+    return solution_recurs(A, 1, 1);
 }
