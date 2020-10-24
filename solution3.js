@@ -34,6 +34,11 @@
  *   3. each element of the matrix A is an integer within the range[-1,000,000,000..1,000,000,000]
  */
 
+ /* My notes
+  * Which data structures to use?
+  * Probably Graph (undirected), Adjacency matrix
+ */
+
 function solution(A) {
 
 }
