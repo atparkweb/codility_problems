@@ -13,7 +13,7 @@ function solution(A) {
     });
 
     for (i = 0; i < A.length; i++) {
-        var current = sortedArr[i];
+        let current = sortedArr[i];
 
         if (current > 0) {
             if (result < current) {
