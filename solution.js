@@ -6,25 +6,15 @@ Find the lowest positive integer NOT in an Array of integers
 */
 
 function solution(A) {
-    var i, result = 1;
+    var len = A.length,
+        set = new Set(A);
 
-    const sortedArr = [...A].sort((a,b) => {
-        return a - b;
-    });
-
-    for (i = 0; i < A.length; i++) {
-        let current = sortedArr[i];
-
-        if (current > 0) {
-            if (result < current) {
-                break;
-            }
-            
-            if (current === result) {
-                result++;
-            }
+    let minFree = len + 1;
+    for (let i = 1; i <= len + 1; i++) {
+        if (!set.has(i) && i < minFree) {
+            minFree = i;
         }
     }
 
-    return result;
+    return minFree;
 }
